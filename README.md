@@ -43,10 +43,179 @@ Procedemos a la instalación de la herramienta de Virtualización VMware Worksta
 1. Descargamos la herramienta desde la URL antes facilitada.
 2. Le damos a siguiente, siguiente, siguiente... o si quieres mira el siguiente video.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=VxTO0xxN6-M" target="_blank"><img src="http://img.youtube.com/vi/VxTO0xxN6-M/0.jpg" alt="IMAGE ALT TEXT HERE" width="540" height="400" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=VxTO0xxN6-M" target="_blank"><img src="http://img.youtube.com/vi/VxTO0xxN6-M/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 3. Reinicia el PC
 
 > **Nota:** Hay que tener en cuanta al menos dos cosas: 
 > + VMware y HiperV de windows no pueden funcionar simultáneamente, en el video indica como deshabilitarlo
 > + Recuerda que debes habilitar la Virtualización desde la BIOS de ti PC
+
+## 3.3. Instalación de Ubuntu Server 16.04
+
+### 3.3.1. Instalacion del SO en VMware
+
+Procedemos a la instalación de Ubuntu Server 16.04 en una máquina virtual con VMware Workstation 14 y para ello seguiremos los siguientes pasos:
+
+1. Descargamos el SO desde la URL facilitada anteriormente.
+2. Los pasos para la instalación están al final de este post
+
+### 3.3.2. Pasos Post-Instalación
+
+Tras finalizar la instalación del sistema operativo y logarnos necesitamos realiza algunos ajustes simples al sistema.
+
++ Activar el usuario root: por defecto en los sistemas Ubuntu en usuario root viene deshabilitado por seguridad para activarlo ejecutaremos los siguientes comandos.
+
+```bash
+sudo passwd root
+```
+Esto nos solicitara la contraseña del usuario que hemos creado y posteriormente la contraseña que deseamos de root.
+
++ Nos logamos con root:
+```bash
+su - root
+```
+
++ Activar Acceso SSH a la maquina
+
+```bash
+apt-get install openssh-server -y
+service sshd start
+```
+
+Con esto hemos instalado el servidor ssh para conectarnos a la maquina con mobaXterm o Putty, pero nos falta habilitar en la configuración para que se pueda acceder con root, cambiaremos la configuración del fichero /etc/ssh/sshd_config donde sustituiremos la línea `PermitRootLogin prohibit-password` por `PermitRootLogin yes`
+
+```bash
+vi /etc/ssh/sshd_config
+```
+
+Tras realizar estos pasos ya no podremos conectar mediante SSH a la máquina, utilizando MobaXterm o Putty
+
++ Instalación de la herramienta git en Ubuntu
+
+Con esta herramienta podréis descargar todo lo necesarios para instalar el servidor KMS, para ello ejecutaremos los siguientes comandos.
+
+```bash
+apt-get install git -y
+```
+
+### 3.3.3 Pasos de instalación del servidor KMS
+
+Tras los pasos de post instalación ya podemos proceder a instalar el servidor KMS, Para ello seguiremos los siguientes pasos siempre con el usuario root en Ubuntu:
+
++ Descargar el código de servidor KMS desde el servidor de GitHub
+
+```bash
+cd /opt/
+git clone https://github.com/rafaeljimenez85/kmsServer.git
+```
+
++ Realizamos una copia del ejecutable `vlmcsd-x64-glibc` y posteriormente lo renombramos a `vlmcsd`
+
+```bash
+cd /opt/binaries/Linux/intel/glibc/
+cp vlmcsd-x64-glibc vlmcsd-x64-glibc.original
+mv vlmcsd-x64-glibc vlmcsd
+```
+
++ Copiamos el ejecutable de KMS al directorio `/usr/local/sbin`
+
+```bash
+cp /opt/binaries/Linux/intel/glibc/vlmcsd /usr/local/sbin/
+```
+
++ Damos permiso de ejecución al ejecutable `vlmcsd`
+
+```bash
+cd /usr/local/sbin/
+chmod +x vlmcsd
+```
+
++ Verificamos que el correcto funcionamiento del ejecutable verificando la versión del mismo.
+
+```bash
+./vlmcsd -V
+``` 
+
+El resultado tiene que ser el siguiente
+
+```txt
+root@kms:/usr/local/sbin# ./vlmcsd -V
+vlmcsd 1111, built 2017-06-17 00:53:13 UTC 64-bit
+Compiler: x86_64-linux-gcc 4.9.1
+Intended platform: Intel x86_64 Linux glibc little-endian
+Common flags:
+vlmcsd flags:
+
+```
+
++ Creamos el fichero `/lib/systemd/system/vlmcsd.service` que es el fichero de configuración para el arranque automático del demonio en modo servicio en caso de paradas, arranques y reinicios
+
+```bash
+vi /lib/systemd/system/vlmcsd.service
+```
+
+El fichero debe contener lo siguiente:
+
+```txt
+Unit]
+Description=Microsoft KMS emulator
+After=network.target auditd.service
+
+[Service]
+ExecStart=/usr/local/sbin/vlmcsd -D
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=vlmcsd.service
+```
+
++ Recargar los datos de los ficheros de configuración de systemd
+
+```bash 
+systemctl daemon-reload
+```
+
++ Habilitar el nuevo servicio vlmcsd 
+```bash
+systemctl enable vlmcsd.service
+```
+
++ Arrancamos el nuevo servicio vlmcsd
+
+```bash
+systemctl start vlmcsd.service
+```
+
+
+### 3.3.4 Comandos de status, parada y arranque
+
+Estos comandos son simplemente para la posterior gestión en caso de ser necesarios
+
++ Arranque
+
+```bash
+systemctl start vlmcsd.service
+```
+
++ Parada
+
+```bash
+systemctl stop vlmcsd.service
+```
+
++ Estado
+
+```bash
+systemctl status vlmcsd.service
+```
+
++ Deshabilitar el servicio
+
+```bash
+systemctl disable  vlmcsd.service
+```
+
