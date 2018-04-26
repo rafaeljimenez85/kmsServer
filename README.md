@@ -43,7 +43,7 @@ Procedemos a la instalación de la herramienta de Virtualización VMware Worksta
 1. Descargamos la herramienta desde la URL antes facilitada.
 2. Le damos a siguiente, siguiente, siguiente... o si quieres mira el siguiente video.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=VxTO0xxN6-M" target="_blank"><img src="http://img.youtube.com/vi/VxTO0xxN6-M/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=VxTO0xxN6-M" target="_blank"><img src="http://img.youtube.com/vi/VxTO0xxN6-M/0.jpg" alt="IMAGE ALT TEXT HERE" width="440" height="280" border="10" /></a>
 
 3. Reinicia el PC
 
