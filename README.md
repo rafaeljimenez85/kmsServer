@@ -159,8 +159,8 @@ Tras los pasos de post instalación ya podemos proceder a instalar el servidor K
 
 	El fichero debe contener lo siguiente:
 
-		```txt
-		Unit]
+		```
+		[Unit]
 		Description=Microsoft KMS emulator
 		After=network.target auditd.service
 
