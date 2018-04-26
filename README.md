@@ -66,26 +66,26 @@ Tras finalizar la instalación del sistema operativo y logarnos necesitamos real
 
 + Activar el usuario root: por defecto en los sistemas Ubuntu en usuario root viene deshabilitado por seguridad para activarlo ejecutaremos los siguientes comandos.
 
-```bash
+```console
 sudo passwd root
 ```
 Esto nos solicitara la contraseña del usuario que hemos creado y posteriormente la contraseña que deseamos de root.
 
 + Nos logamos con root:
-```bash
+```console
 su - root
 ```
 
 + Activar Acceso SSH a la maquina
 
-```bash
+```console
 apt-get install openssh-server -y
 service sshd start
 ```
 
 Con esto hemos instalado el servidor ssh para conectarnos a la maquina con mobaXterm o Putty, pero nos falta habilitar en la configuración para que se pueda acceder con root, cambiaremos la configuración del fichero /etc/ssh/sshd_config donde sustituiremos la línea `PermitRootLogin prohibit-password` por `PermitRootLogin yes`
 
-```bash
+```console
 vi /etc/ssh/sshd_config
 ```
 
@@ -95,7 +95,7 @@ Tras realizar estos pasos ya no podremos conectar mediante SSH a la máquina, ut
 
 Con esta herramienta podréis descargar todo lo necesarios para instalar el servidor KMS, para ello ejecutaremos los siguientes comandos.
 
-```bash
+```console
 apt-get install git -y
 ```
 
@@ -105,14 +105,14 @@ Tras los pasos de post instalación ya podemos proceder a instalar el servidor K
 
 + Descargar el código de servidor KMS desde el servidor de GitHub
 
-```bash
+```console
 cd /opt/
 git clone https://github.com/rafaeljimenez85/kmsServer.git
 ```
 
 + Realizamos una copia del ejecutable `vlmcsd-x64-glibc` y posteriormente lo renombramos a `vlmcsd`
 
-```bash
+```console
 cd /opt/binaries/Linux/intel/glibc/
 cp vlmcsd-x64-glibc vlmcsd-x64-glibc.original
 mv vlmcsd-x64-glibc vlmcsd
@@ -120,20 +120,20 @@ mv vlmcsd-x64-glibc vlmcsd
 
 + Copiamos el ejecutable de KMS al directorio `/usr/local/sbin`
 
-```bash
+```console
 cp /opt/binaries/Linux/intel/glibc/vlmcsd /usr/local/sbin/
 ```
 
 + Damos permiso de ejecución al ejecutable `vlmcsd`
 
-```bash
+```console
 cd /usr/local/sbin/
 chmod +x vlmcsd
 ```
 
 + Verificamos que el correcto funcionamiento del ejecutable verificando la versión del mismo.
 
-```bash
+```console
 ./vlmcsd -V
 ``` 
 
@@ -151,7 +151,7 @@ vlmcsd flags:
 
 + Creamos el fichero `/lib/systemd/system/vlmcsd.service` que es el fichero de configuración para el arranque automático del demonio en modo servicio en caso de paradas, arranques y reinicios
 
-```bash
+```console
 vi /lib/systemd/system/vlmcsd.service
 ```
 
@@ -175,18 +175,18 @@ Alias=vlmcsd.service
 
 + Recargar los datos de los ficheros de configuración de systemd
 
-```bash 
+```console 
 systemctl daemon-reload
 ```
 
 + Habilitar el nuevo servicio vlmcsd 
-```bash
+```console
 systemctl enable vlmcsd.service
 ```
 
 + Arrancamos el nuevo servicio vlmcsd
 
-```bash
+```console
 systemctl start vlmcsd.service
 ```
 
@@ -197,25 +197,27 @@ Estos comandos son simplemente para la posterior gestión en caso de ser necesar
 
 + Arranque
 
-```bash
+```console
 systemctl start vlmcsd.service
 ```
 
 + Parada
 
-```bash
+```console
 systemctl stop vlmcsd.service
 ```
 
 + Estado
 
-```bash
+```console
 systemctl status vlmcsd.service
 ```
 
 + Deshabilitar el servicio
 
-```bash
+```console
 systemctl disable  vlmcsd.service
 ```
+
+
 
