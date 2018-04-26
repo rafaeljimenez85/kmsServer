@@ -215,9 +215,9 @@ systemctl status vlmcsd.service
 
 + Deshabilitar el servicio
 
-```console
-systemctl disable  vlmcsd.service
-```
+	```console
+	systemctl disable  vlmcsd.service
+	```
 
 
 
