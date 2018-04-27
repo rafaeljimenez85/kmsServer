@@ -224,7 +224,7 @@ Estos comandos son simplemente para la posterior gestión en caso de ser necesar
 
 Tras la instalación de servidor KMS, lo único que nos queda es probar su funcionamiento a la hora de validar licencias de windows. Para ello instalaremos una máquina virtual de windows 10 Pro sin licencia, al finalizar esta instalación solos nos queda ejecutar 2 comando que explicaremos a continuación.
 
-+ **slmgr /ipk <setup key> :** Este comando le indica a Windows las licencias por volumen (que proporciona Microsoft) que debe usar para el servidor KMS.(para más detalle mira el apartado 5.)
++ **slmgr /ipk [setup key] :** Este comando le indica a Windows las licencias por volumen (que proporciona Microsoft) que debe usar para el servidor KMS.(para más detalle mira el apartado 5.)
 + **slmgr -skms [KMS IP] :** Con este comando le indicamos que windows el nuevo servidor KMS para validar la licencias
 + **slmgr -ato :** Con este comando realizamos el proceso de validación de la licencia contra el servidor KMS
 
