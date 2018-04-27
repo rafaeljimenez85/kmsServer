@@ -159,21 +159,21 @@ Tras los pasos de post instalación ya podemos proceder a instalar el servidor K
 
 	El fichero debe contener lo siguiente:
 
-		```txt
-		[Unit]
-		Description=Microsoft KMS emulator
-		After=network.target auditd.service
+```txt
+[Unit]
+Description=Microsoft KMS emulator
+After=network.target auditd.service
 
-		[Service]
-		ExecStart=/usr/local/sbin/vlmcsd -D
-		ExecReload=/bin/kill -HUP $MAINPID
-		KillMode=process
-		Restart=on-failure
+[Service]
+ExecStart=/usr/local/sbin/vlmcsd -D
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
 
-		[Install]
-		WantedBy=multi-user.target
-		Alias=vlmcsd.service
-		```
+[Install]
+WantedBy=multi-user.target
+Alias=vlmcsd.service
+```
 
 + Recargar los datos de los ficheros de configuración de systemd
 
@@ -259,7 +259,7 @@ Estas licencias las proporciona Microsoft en su página: https://docs.microsoft.
 
 ### Windows 10
 
-| Operating system edition  |KMS Client Setup Key   |   |   |   |
+| Operating system edition  |KMS Client Setup Key   |
 |:-:|:-:|
 |Windows 10 Professional   |W269N-WFGWX-YVC9B-4J6C9-T83GX   |
 |Windows 10 Professional N   |MH37W-N47XK-V7XM9-C7227-GCQG9   |
