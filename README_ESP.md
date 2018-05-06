@@ -9,6 +9,12 @@ Aunque no se tocara en este trabajo, la implementación de un servidor KMS con l
 
 >**Nota importante:** Este trabajo está diseñado solo para uso educacional y jamás debe de ser usado para validar licencias fuera de un entorno de laboratorio ya que se estaría cometiendo una violación de los términos y condiciones de Microsoft al no tratarse de un servidor KMS legítimo. Por este motivo no me ahogo responsable de uso inadecuado que se pueda realizar con este documento.
 
+Para la instalación de Servidores KMS Server legítimos podéis seguir la información de los siguientes enlaces:
+
++ http://ivan.dretvic.com/2011/06/how-to-configure-a-kms-server-in-windows-server-2008-r2/
++ https://www.windows-noob.com/forums/topic/12787-how-can-i-setup-kms-key-management-server-for-activating-windows-10/
+
+
 
 # Instalación de Servidor KMS (ESP)
 Todos los pasos de la instalación y configuración de KMS puedes encontrarlos en la [Wiki](../../wiki)
