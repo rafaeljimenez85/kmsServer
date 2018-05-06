@@ -8,9 +8,7 @@ For this reason I have documented a step by step assembly of a laboratory with t
 
 Even if you do not touch on this work, the implementation of a KMS server with the group policies of **Active Directory (AD)** or a **Windows Server Update Service (WSUS)** would add extra versatility and power to our environment since the validations of the licenses would be carried out automatically.
 
->>>
-**Important note:** This work is designed for educational use only and should never be used to validate licenses outside of a laboratory environment as it would be a violation of Microsoft's terms and conditions as it is not a server KMS legitimate. For this reason I do not choke responsible for improper use that can be made with this document.
->>>
+>**Important note:** This work is designed for educational use only and should never be used to validate licenses outside of a laboratory environment as it would be a violation of Microsoft's terms and conditions as it is not a server KMS legitimate. For this reason I do not choke responsible for improper use that can be made with this document.
 
 # Installation of KMS Server (ENG)
 
