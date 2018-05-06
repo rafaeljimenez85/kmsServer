@@ -10,6 +10,12 @@ Even if you do not touch on this work, the implementation of a KMS server with t
 
 >**Important note:** This work is designed for educational use only and should never be used to validate licenses outside of a laboratory environment as it would be a violation of Microsoft's terms and conditions as it is not a server KMS legitimate. For this reason I do not choke responsible for improper use that can be made with this document.
 
+For the installation of legitimate KMS Server Servers you can follow the information of the following links:
+
++ http://ivan.dretvic.com/2011/06/how-to-configure-a-kms-server-in-windows-server-2008-r2/
++ https://www.windows-noob.com/forums/topic/12787-how-can-i-setup-kms-key-management-server-for-activating-windows-10/
+
+
 # Installation of KMS Server (ENG)
 
 All the steps of the installation and configuration of KMS can be found in the [Wiki](../../wiki)
