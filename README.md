@@ -25,4 +25,5 @@ All the data obtained for the installation of this document were obtained in the
 
 + https://forums.mydigitallife.net/threads/emulated-kms-servers-on-non-windows-platforms.50234/
 + https://github.com/pollonegro/Lan-Dropbox
++ https://technet.microsoft.com/es-es/library/ff793434.aspx
 + https://www.youtube.com/watch?v=VxTO0xxN6-M&t=
