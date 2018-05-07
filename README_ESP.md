@@ -23,5 +23,6 @@ Todos los pasos de la instalación y configuración de KMS puedes encontrarlos e
 Todos los datos obtenidos para la instalación de este documento fueron obtenidos en las siguientes fuentes:
 
 + https://forums.mydigitallife.net/threads/emulated-kms-servers-on-non-windows-platforms.50234/
++ https://technet.microsoft.com/es-es/library/ff793434.aspx
 + https://github.com/pollonegro/Lan-Dropbox
 + https://www.youtube.com/watch?v=VxTO0xxN6-M&t=
