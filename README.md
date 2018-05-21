@@ -8,7 +8,7 @@ Existe una versión de este contenido en [Github](https://github.com/rafaeljimen
 
 ## Documentación
 
-Toda la documentación de esta disponible en [GitBook](https://legacy.gitbook.com/book/rafaeljimenezrey/kms-server)
+Toda la documentación de esta disponible en [GitBook](https://legacy.gitbook.com/book/rafaeljimenezrey/kms-server/details)
 
 # Licencia
 
