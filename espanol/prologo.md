@@ -1,4 +1,4 @@
-# Prologo \(ESP\)
+# Prologo
 
 Este trabajo nace de la necesidad y curiosidad de aprender el uso y funcionamiento de un servidor KMS con el cual se podrán activar y validar licencias de los diferentes sistemas operativos Windows a través de la red interna.
 
