@@ -7,16 +7,16 @@
   * [Understanding KMS](ingles/understanding-kms.md)
   * [Installation of KMS Server Emulator](ingles/installation-of-kms-server-emulator.md)
   * [Validate windows licenses](ingles/validate-windows-licenses.md)
-  * Volume Licenses for KMS Servers
-  * Conclusions
+  * [Volume Licenses for KMS Servers](ingles/volume-licenses-for-kms-servers.md)
+  * [Conclusions](ingles/conclusions.md)
   * [Bibliography](ingles/bibliography.md)
 * [Español](espanol.md)
   * [Prologo](espanol/prologo.md)
-  * Introduccion
-  * Entendiendo Servidores KMS
-  * Instalacion de Emulador de Servidor KMS
-  * Validacion de licencias Windows
-  * Licencias windows por volumen 
-  * Conclusiones
+  * [Introduccion](espanol/introduccion.md)
+  * [Entendiendo Servidores KMS](espanol/entendiendo-servidores-kms.md)
+  * [Instalacion de Emulador de Servidor KMS](espanol/instalacion-de-emulador-de-servidor-kms.md)
+  * [Validacion de licencias Windows](espanol/validacion-de-licencias-windows.md)
+  * [Licencias windows por volumen ](espanol/licencias-windows-por-volumen.md)
+  * [Conclusiones](espanol/conclusiones.md)
   * [Bibliografia](espanol/bibliografia.md)
 
