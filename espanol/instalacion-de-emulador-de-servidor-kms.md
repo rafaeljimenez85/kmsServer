@@ -54,7 +54,8 @@ Tras finalizar la instalación del sistema operativo y logarnos necesitamos real
 	
 	Esto nos solicitara la contraseña del usuario que hemos creado y posteriormente la contraseña que deseamos de root.
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/passwdroot.JPG "passwd root")
+
+![](/vlmcsd/binaries/Linux/images/passwdroot.JPG)
 
 + Nos logamos con root:
 
@@ -69,7 +70,7 @@ Tras finalizar la instalación del sistema operativo y logarnos necesitamos real
 	service sshd start
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/installSSHServer.JPG "install ssh-server")
+	![alt text](/vlmcsd/binaries/Linux/images/installSSHServer.JPG "install ssh-server")
 
 	Con esto hemos instalado el servidor ssh para conectarnos a la maquina con mobaXterm o Putty, pero nos falta habilitar en la configuración para que se pueda acceder con root, cambiaremos la configuración del fichero /etc/ssh/sshd_config donde sustituiremos la línea `PermitRootLogin prohibit-password` por `PermitRootLogin yes`
 
@@ -77,7 +78,7 @@ Tras finalizar la instalación del sistema operativo y logarnos necesitamos real
 	vi /etc/ssh/sshd_config
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/PermitRootLogin.JPG)
+	![alt text](/vlmcsd/binaries/Linux/images/PermitRootLogin.JPG)
 
 	Lo siguiente sera reiniciar el servicio sshd para que cargue la configuración que acabamos de modificar.
 
