@@ -11,12 +11,12 @@
   * Conclusions
   * [Bibliography](ingles/bibliography.md)
 * [Español](espanol.md)
-  * Prologo
+  * [Prologo](espanol/prologo.md)
   * Introduccion
   * Entendiendo Servidores KMS
   * Instalacion de Emulador de Servidor KMS
   * Validacion de licencias Windows
   * Licencias windows por volumen 
   * Conclusiones
-  * Bibliografia
+  * [Bibliografia](espanol/bibliografia.md)
 
