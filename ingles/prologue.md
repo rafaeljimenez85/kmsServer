@@ -1,4 +1,4 @@
-# Prologue \(ENG\)
+# Prologue
 
 This work arises from the need and curiosity to learn the use and operation of a KMS server with which you can activate and validate licenses of different Windows operating systems through the internal network.
 

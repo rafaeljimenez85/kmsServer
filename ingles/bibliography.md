@@ -1,4 +1,4 @@
-# bibliography \(ENG\)
+# Bibliography
 
 All the data obtained for the installation of this document were obtained in the following sources:
 
