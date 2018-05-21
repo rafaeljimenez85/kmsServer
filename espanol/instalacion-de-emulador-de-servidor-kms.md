@@ -88,7 +88,7 @@ Tras finalizar la instalación del sistema operativo y logarnos necesitamos real
 
 	Tras realizar estos pasos ya nos podremos conectar mediante SSH a la máquina, utilizando MobaXterm o Putty
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/ConectSSH.JPG)
+	![alt text](/vlmcsd/binaries/Linux/images/ConectSSH.JPG)
 
 + Instalación de la herramienta git en Ubuntu
 
@@ -98,7 +98,7 @@ Tras finalizar la instalación del sistema operativo y logarnos necesitamos real
 	apt-get install git -y
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/gitInstall.JPG)
+	![alt text](/vlmcsd/binaries/Linux/images/gitInstall.JPG)
 
 ## 3.1.5 Pasos de instalación del servidor KMS
 
@@ -111,7 +111,7 @@ Tras los pasos de post instalación ya podemos proceder a instalar el servidor K
 	git clone https://github.com/rafaeljimenez85/kmsServer.git
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/GitClone.JPG)
+	![alt text](/vlmcsd/binaries/Linux/images/GitClone.JPG)
 
 + Realizamos una copia del ejecutable `vlmcsd-x64-glibc` y posteriormente lo renombramos a `vlmcsd`
 
@@ -121,7 +121,7 @@ Tras los pasos de post instalación ya podemos proceder a instalar el servidor K
 	mv vlmcsd-x64-glibc vlmcsd
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/renameFiles.JPG)
+	![alt text](/vlmcsd/binaries/Linux/images/renameFiles.JPG)
 
 + Copiamos el ejecutable de KMS al directorio `/usr/local/sbin`
 
@@ -153,7 +153,7 @@ Tras los pasos de post instalación ya podemos proceder a instalar el servidor K
 	vlmcsd flags:
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/moveKMS.JPG)
+	![alt text](/vlmcsd/binaries/Linux/images/moveKMS.JPG)
 
 + Creamos el fichero `/lib/systemd/system/vlmcsd.service` que es el fichero de configuración para el arranque automático del demonio en modo servicio en caso de paradas, arranques y reinicios
 
@@ -179,7 +179,7 @@ WantedBy=multi-user.target
 Alias=vlmcsd.service
 ```
 
-![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/vlmcsd-service.JPG)
+![alt text](/vlmcsd/binaries/Linux/images/vlmcsd-service.JPG)
 
 + Recargar los datos de los ficheros de configuración de systemd
 
@@ -198,7 +198,7 @@ Alias=vlmcsd.service
 	systemctl start vlmcsd.service
 	```
 
-![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/startDaemon.JPG)
+![alt text](/vlmcsd/binaries/Linux/images/startDaemon.JPG)
 
 ## 3.1.6. Comandos de status, parada y arranque
 
@@ -278,7 +278,7 @@ A continuación, seguiremos los siguientes pasos de post instalación para dejar
 + Conectaremos el USB de al menos 2 GB en el Router
 
 + Nos conectaremos al Router por SSH: `ssh root@192.168.8.1`
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/sshRouter.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/sshRouter.jpg)
 
 + Ejecutaremos los siguientes comandos:
 
@@ -293,11 +293,11 @@ A continuación, seguiremos los siguientes pasos de post instalación para dejar
 
 	Estos comandos son para instalar las herramientas necesarias para dar formato al USB y poder almacenar datos en el mismo.
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/comandos%20opkg%201.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/comandos%20opkg%201.jpg)
 
 + Verificar el estado del disco ejecutando el siguiente comando `fdisk -l`
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/fdisk-l-1.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/fdisk-l-1.jpg)
 
 	Como podéis ver el USB (/dev/sda1) está en formato FAT32 por lo cual hay que formatearlo en EXT4
 
@@ -340,7 +340,7 @@ A continuación, seguiremos los siguientes pasos de post instalación para dejar
 
 + Damos formato EXT4 al disco con el siguiente comando `mkfs.ext4 /dev/sda1`
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/ext4.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/ext4.jpg)
 
 + Creamos punto de montaje y montamos la unidad antes creada ejecutando 
 
@@ -384,7 +384,7 @@ A continuación, seguiremos los siguientes pasos de post instalación para dejar
         option enabled_fsck 0
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/fstab.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/fstab.jpg)
 
 + Reiniciamos el router para verificar que arranque correctamente con el comando `reboot`
 
@@ -396,8 +396,8 @@ A continuación instalaremos en OpenWrt el emulador de KMS, para ello realizarem
 	- https://github.com/pollonegro/Lan-Dropbox/blob/master/firmware/OpenKMS/luci-app-vlmcsd_1.0.2-1_all.ipk
 	- https://github.com/pollonegro/Lan-Dropbox/blob/master/firmware/OpenKMS/vlmcsd_svn1111-1_ramips_24kec.ipk
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/luci-app-vlmcsd_1.0.2-1_all.jpg)
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/vlmcsd_svn1111-1_ramips_24kec.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/luci-app-vlmcsd_1.0.2-1_all.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/vlmcsd_svn1111-1_ramips_24kec.jpg)
 
 + Creamos la carpeta vlmcsd en el router con el siguiente comando `mkdir /tmp/vlmcsd`
 
@@ -408,7 +408,7 @@ A continuación instalaremos en OpenWrt el emulador de KMS, para ello realizarem
 	scp ./vlmcsd_svn1111-1_ramips_24kec.ipk root@192.168.8.1:/tmp/vlmcsd
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/scp_vlmcsd.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/scp_vlmcsd.jpg)
 
 + Instalamos los paquetes:
 
@@ -419,7 +419,7 @@ A continuación instalaremos en OpenWrt el emulador de KMS, para ello realizarem
 	opkg update
 	``` 
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/instalacion-KMS-paquetes.jpg)
+	![alt text](/vlmcsd/binaries/Linux/images/instalacion-KMS-paquetes.jpg)
 
 Tras realizar todos estos pasos el emulador de KMS ya se encuentra instalado, para comprobarlo puedes ejecutar el siguiente comando `/usr/bin/vlmcsd -V` y tiene que devolverte lo siguiente:
 
