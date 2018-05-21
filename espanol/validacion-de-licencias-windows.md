@@ -2,7 +2,7 @@
 
 Tras la instalación de servidor KMS, lo único que nos queda es probar su funcionamiento a la hora de validar licencias de windows. Para ello instalaremos una máquina virtual de windows 10 Pro sin licencia, al finalizar esta instalación solos nos queda ejecutar 3 comando que explicaremos a continuación.
 
-![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/winSinLicencia.JPG "Windows sin Activar")
+![alt text](/vlmcsd/binaries/Linux/images/winSinLicencia.JPG "Windows sin Activar")
 
 ## 4.1 Comandos de configuración y activación
 
@@ -14,7 +14,7 @@ A continuación, os indico los valores necesarios para validar una licencia wind
 
 + Abrimos un CMD con privilegios de administrador
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/cmdAdministrador.JPG "cmd con privilegios de administrador")
+	![alt text](/vlmcsd/binaries/Linux/images/cmdAdministrador.JPG "cmd con privilegios de administrador")
 
 + Ejecutamos los siguiente:
 
@@ -24,15 +24,15 @@ A continuación, os indico los valores necesarios para validar una licencia wind
 	slmgr -ato
 	```
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/ipk.JPG "Comando ipk")
+	![alt text](/vlmcsd/binaries/Linux/images/ipk.JPG "Comando ipk")
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/skms.JPG "Comando skms")
+	![alt text](/vlmcsd/binaries/Linux/images/skms.JPG "Comando skms")
 
-	![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/ato.JPG "Comando ato")
+	![alt text](/vlmcsd/binaries/Linux/images/ato.JPG "Comando ato")
 
 Una vez realizado esto, Ya tenemos nuestro windows Activado...
 
-![alt text](https://github.com/rafaeljimenez85/kmsServer/blob/master/vlmcsd/binaries/Linux/images/winActivado.JPG "Windows Activado")
+![alt text](/vlmcsd/binaries/Linux/images/winActivado.JPG "Windows Activado")
 
 ## 4.2 Video Tutorial
 
